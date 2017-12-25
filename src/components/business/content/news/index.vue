@@ -1,16 +1,17 @@
 <template>
     <sunset-layout title="新闻管理">
-        <sunset-crud :options="options"></sunset-crud>
+        <sunset-crud v-ref:crud :options="options"></sunset-crud>
+        <content-preview v-ref:previewer></content-preview>
     </sunset-layout>
 </template>
 <script>
-    import Store from './store.js';
-
-    const CONTENT_TYPE_NEWS = '1';
-    const CONTENT_STATUS_NORMAL = '1';
-    const CONTENT_STATUS_HIDE = '2';
+    import Store from '../store.js';
+    import ContentPreview from '../ContentPreview.vue';
 
     export default {
+        components: {
+            ContentPreview
+        },
         methods: {
 
         },
@@ -23,13 +24,18 @@
                     tableOptions: {
                         columns: [{
                             title: '封面',
-                            name: 'cover'
+                            name: 'cover',
+                            style: 'width:120px;text-align:center;',
+                            format(v) {
+                                return `<img style="width:100px;height:60px;" src="/upload/${v}" />`;
+                            }
                         }, {
                             title: '标题',
                             name: 'title'
                         }, {
-                            title: '摘要',
-                            name: 'digest'
+                            title: '类型',
+                            name: 'category',
+                            enum : 'NEWS_CATEGORY'
                         }, {
                             title: '发布人',
                             style: 'width:120px;text-align:center;',
@@ -38,7 +44,7 @@
                             title: '状态',
                             style: 'width:120px;text-align:center;',
                             name: 'status',
-                            format(v){
+                            format(v) {
                                 var Dictionary = Sunset.Service.Dictionary;
                                 return `<span style="color:${v==Dictionary.alias('CONTENT_STATUS','NORMAL')?'#09c':'#F00'};">${Dictionary.transcode('CONTENT_STATUS',v)}</span>`
                             }
@@ -69,30 +75,47 @@
                             label: '新增',
                             icon: 'plus-round',
                             color: 'success',
-                            permission: 'SYSTEM_MANAGER_DICTIONARY_ADD',
                             signal: 'ADD',
-                            permission: 'SystemVariable_ADD'
+                            permission: 'News_ADD'
                         }],
                         //表格搜索
-                        filter: false,
+                        filter: {
+                            align: 'right',
+                            fields: [{
+                                name: 'keyword',
+                                placeholder: '标题/关键字',
+                                widget: 'search'
+                            }]
+                        },
                         //数据条目操作
                         recordTools: [{
+                            label: '预览',
+                            icon: 'eye',
+                            color: 'info',
+                            operate: (record) => {
+                                Store.getById(record.id).then(res => {
+                                    this.$refs.previewer.preview(res.content);
+                                });
+                            }
+                        }, {
                             label: '修改',
                             icon: 'edit',
                             color: 'warning',
-                            permission: 'SYSTEM_MANAGER_DICTIONARY_UPDATE',
-                            signal: 'MODIFY',
-                            permission: 'SystemVariable_MODIFY'
+                            operate: (record) => {
+                                Store.getById(record.id).then(res => {
+                                    this.$refs.crud.operateSignal('MODIFY', res);
+                                });
+                            },
+                            permission: 'News_MODIFY'
                         }, {
                             label: '删除',
                             icon: 'trash-a',
                             color: 'error',
-                            permission: 'SYSTEM_MANAGER_DICTIONARY_DELETE',
                             signal: 'DELETE',
-                            permission: 'SystemVariable_DELETE'
+                            permission: 'News_DELETE'
                         }],
                         datasource: (filter) => {
-                            filter.type = CONTENT_TYPE_NEWS;
+                            filter.type = Sunset.Service.Dictionary.alias('CONTENT_TYPE','NEWS');
                             return Store.list(filter);
                         }
                     },
@@ -111,7 +134,8 @@
                         }, {
                             label: '所属分类',
                             name: 'category',
-                            widget: 'input',
+                            widget: 'select',
+                            enum : 'NEWS_CATEGORY',
                             validate: {
                                 required: true,
                                 maxlength: 32
@@ -124,9 +148,9 @@
                             format: (a) => {
                                 return JSON.parse(a).data;
                             },
-                            thumbnail: function (a, b, c) {
-                                if (a) {
-                                    return a;
+                            thumbnail: function (v) {
+                                if (v) {
+                                    return `/upload/${v}`;
                                 }
                             },
                             newline: true,
@@ -167,8 +191,8 @@
                             }
                         }],
                         format: (model) => {
-                            model.type = CONTENT_TYPE_NEWS;
-                            model.status = model.status || CONTENT_STATUS_NORMAL;
+                            model.type = Sunset.Service.Dictionary.alias('CONTENT_TYPE','NEWS');
+                            model.status = model.status || Sunset.Service.Dictionary.alias('CONTENT_STATUS','NORMAL');
                             return model;
                         },
                         validate: (model) => {
