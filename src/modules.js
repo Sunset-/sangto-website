@@ -11,6 +11,8 @@ import CustomForm from 'business/customForm/CustomForm';
 //业务
 //新闻
 import News from './components/business/content/news/index';
+import Products from './components/business/content/products/index';
+import Case from './components/business/content/case/index';
 
 let permissions = {
     VIEW: '查看',
@@ -73,6 +75,20 @@ let modules = [
         title: '新闻管理',
         permission: ['ADD', 'MODIFY', 'DELETE'],
         component: News
+    },{
+        group: '应用系统',
+        color: 'info',
+        name: 'Products',
+        title: '产品与方案',
+        permission: ['ADD', 'MODIFY', 'DELETE'],
+        component: Products
+    },{
+        group: '应用系统',
+        color: 'info',
+        name: 'Case',
+        title: '经典案例',
+        permission: ['ADD', 'MODIFY', 'DELETE'],
+        component: Case
     }
 ];
 

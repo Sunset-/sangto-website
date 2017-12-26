@@ -1,5 +1,5 @@
 <template>
-    <sunset-layout title="新闻管理">
+    <sunset-layout title="产品与方案">
         <sunset-crud v-ref:crud :options="options"></sunset-crud>
         <content-preview v-ref:previewer></content-preview>
     </sunset-layout>
@@ -18,8 +18,7 @@
         },
         data() {
             return {
-                options: CrudOptionsFactory.call(this,'News', Sunset.Service.Dictionary.alias('CONTENT_TYPE', 'NEWS'),
-                    'NEWS_CATEGORY')
+                options: CrudOptionsFactory('Products', Sunset.Service.Dictionary.alias('CONTENT_TYPE', 'PRODUCT_AND_PLAN'))
             }
         }
     };
