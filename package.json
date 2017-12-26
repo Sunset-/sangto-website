@@ -66,8 +66,8 @@
     "gulp-util": "^3.0.8",
     "iview": "^0.9.11",
     "less": "^2.3.1",
-    "sunset-ui": "^0.5.19",
     "vue": "^1.0.8",
-    "vue-router": "^0.7.5"
+    "vue-router": "^0.7.5",
+    "sunset-ui": "^0.5.19"
   }
 }

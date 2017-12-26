@@ -18,7 +18,8 @@
         },
         data() {
             return {
-                options: CrudOptionsFactory.call(this,'News', Sunset.Service.Dictionary.alias('CONTENT_TYPE', 'NEWS'),
+                options: CrudOptionsFactory.call(this, '新闻', 'News', Sunset.Service.Dictionary.alias('CONTENT_TYPE',
+                        'NEWS'),
                     'NEWS_CATEGORY')
             }
         }

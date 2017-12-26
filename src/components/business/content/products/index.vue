@@ -18,7 +18,9 @@
         },
         data() {
             return {
-                options: CrudOptionsFactory('Products', Sunset.Service.Dictionary.alias('CONTENT_TYPE', 'PRODUCT_AND_PLAN'))
+                options: CrudOptionsFactory.call(this, '产品与方案', 'Products', Sunset.Service.Dictionary.alias(
+                    'CONTENT_TYPE',
+                    'PRODUCT_AND_PLAN'), 'PRODUCTS_CATEGORY')
             }
         }
     };
