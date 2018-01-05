@@ -11,7 +11,7 @@ module.exports = function (moduleName, contentType, categoryName, format) {
                 name: 'cover',
                 style: 'width:120px;text-align:center;',
                 format(v) {
-                    return `<img style="width:100px;height:60px;" src="/upload/${v}" />`;
+                    return `<img style="width:100px;" src="/upload/${v}" />`;
                 }
             }, {
                 title: '标题',

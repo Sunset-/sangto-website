@@ -40,7 +40,7 @@
                         localPage: false,
                         multiCheck: false,
                         sortable: true,
-                        lazy: true,
+                        lazy: false,
                         format: {
                             list: 'rows',
                             count: 'count',
