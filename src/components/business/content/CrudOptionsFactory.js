@@ -1,8 +1,8 @@
 import Store from './store.js';
 
-module.exports = function (moduleName, contentType, categoryName, format) {
+module.exports = function (title, moduleName, contentType, categoryName, format) {
     var options = {
-        title: '新闻',
+        title: title,
         store: Store,
         //表格
         tableOptions: {
@@ -169,6 +169,8 @@ module.exports = function (moduleName, contentType, categoryName, format) {
                     'customstyle', 'paragraph', 'fontfamily', 'fontsize', '|',
                     'directionalityltr', 'directionalityrtl', 'indent', '|',
                     'justifyleft', 'justifycenter', 'justifyright', 'justifyjustify', '|', 'touppercase', 'tolowercase', '|',
+                    'link', 'unlink', 'anchor', '|', 'imagenone', 'imageleft', 'imageright', 'imagecenter', '|',
+                    'simpleupload', 'insertimage', 'emotion', 'scrawl', '|',
                     'imagenone', 'imageleft', 'imageright', 'imagecenter', '|',
                     'horizontal', 'date', 'time', 'spechars', '|',
                     'inserttable', 'deletetable', 'insertparagraphbeforetable', 'insertrow', 'deleterow', 'insertcol', 'deletecol', 'mergecells', 'mergeright', 'mergedown', 'splittocells', 'splittorows', 'splittocols', 'charts', '|',

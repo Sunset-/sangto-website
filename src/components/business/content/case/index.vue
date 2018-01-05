@@ -18,9 +18,8 @@
         },
         data() {
             return {
-                options: CrudOptionsFactory.call(this, 'Case', Sunset.Service.Dictionary.alias('CONTENT_TYPE',
-                        'SUCCESSFUL_CASE'),
-                    'CASES_CATEGORY')
+                options: CrudOptionsFactory.call(this, '经典案例', 'Case', Sunset.Service.Dictionary.alias('CONTENT_TYPE',
+                    'SUCCESSFUL_CASE'), 'CASES_CATEGORY')
             }
         }
     };
