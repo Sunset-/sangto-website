@@ -18,9 +18,13 @@
         },
         data() {
             return {
-                options: CrudOptionsFactory.call(this, '新闻', 'News', Sunset.Service.Dictionary.alias('CONTENT_TYPE',
+                options: (()=>{
+                    var options = CrudOptionsFactory.call(this, '新闻', 'News', Sunset.Service.Dictionary.alias('CONTENT_TYPE',
                         'NEWS'),
-                    'NEWS_CATEGORY')
+                    'NEWS_CATEGORY');
+                    options.tableOptions.columns.shift();
+                    return options;
+                })()
             }
         }
     };

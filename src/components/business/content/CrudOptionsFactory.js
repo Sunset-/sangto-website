@@ -7,6 +7,13 @@ module.exports = function (title, moduleName, contentType, categoryName, format)
         //表格
         tableOptions: {
             columns: [{
+                title: '图标',
+                name: 'icon',
+                style: 'width:70px;text-align:center;',
+                format(v) {
+                    return `<img style="width:50px;" src="/upload/${v}" />`;
+                }
+            },{
                 title: '封面',
                 name: 'cover',
                 style: 'width:120px;text-align:center;',
@@ -30,7 +37,11 @@ module.exports = function (title, moduleName, contentType, categoryName, format)
                 name: 'status',
                 format(v) {
                     var Dictionary = Sunset.Service.Dictionary;
-                    return `<span style="color:${v==Dictionary.alias('CONTENT_STATUS','NORMAL')?'#09c':'#F00'};">${Dictionary.transcode('CONTENT_STATUS',v)}</span>`
+                    return `<span style="color:${{
+                        '1' : '#09c',
+                        '2' : '#33d685',
+                        '3' : '#F00'
+                    }[v]}">${Dictionary.transcode('CONTENT_STATUS',v)}</span>`
                 }
             }, {
                 title: '更新人',
@@ -124,10 +135,19 @@ module.exports = function (title, moduleName, contentType, categoryName, format)
                     required: true,
                     maxlength: 32
                 }
+            },  {
+                label: '状态',
+                name: 'status',
+                widget: 'select',
+                enum: 'CONTENT_STATUS',
+                validate: {
+                    required: true
+                }
             }, {
-                label: '封面图片',
-                name: 'cover',
+                label: '图标',
+                name: 'icon',
                 widget: 'file',
+                max :1,
                 url: '/service/system/file/upload',
                 format: (a) => {
                     return JSON.parse(a).data;
@@ -137,10 +157,22 @@ module.exports = function (title, moduleName, contentType, categoryName, format)
                         return `/upload/${v}`;
                     }
                 },
-                newline: true,
-                validate: {
-                    required: true
-                }
+                newline: true
+            }, {
+                label: '封面图片',
+                name: 'cover',
+                widget: 'file',
+                max :1,
+                url: '/service/system/file/upload',
+                format: (a) => {
+                    return JSON.parse(a).data;
+                },
+                thumbnail: function (v) {
+                    if (v) {
+                        return `/upload/${v}`;
+                    }
+                },
+                newline: true
             }, {
                 label: '关键字',
                 name: 'keywords',
@@ -191,6 +223,10 @@ module.exports = function (title, moduleName, contentType, categoryName, format)
                     maxlength: 32
                 }
             }],
+            cast:(model)=>{
+                model.category += '';
+                model.status += '';
+            },
             format: (model) => {
                 model.type = contentType;
                 model.status = model.status || Sunset.Service.Dictionary.alias('CONTENT_STATUS', 'NORMAL');

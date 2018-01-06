@@ -13,6 +13,8 @@ import CustomForm from 'business/customForm/CustomForm';
 import News from './components/business/content/news/index';
 import Products from './components/business/content/products/index';
 import Case from './components/business/content/case/index';
+import Honor from './components/business/certificate/honor/index.vue';
+import Partner from './components/business/certificate/partner/index.vue';
 
 let permissions = {
     VIEW: '查看',
@@ -89,7 +91,22 @@ let modules = [
         title: '经典案例',
         permission: ['ADD', 'MODIFY', 'DELETE'],
         component: Case
+    },{
+        group: '应用系统',
+        color: 'info',
+        name: 'Honor',
+        title: '荣誉证书',
+        permission: ['ADD', 'MODIFY', 'DELETE'],
+        component: Honor
+    },{
+        group: '应用系统',
+        color: 'info',
+        name: 'Partner',
+        title: '合作伙伴',
+        permission: ['ADD', 'MODIFY', 'DELETE'],
+        component: Partner
     }
+    
 ];
 
 var moduleComponent = {};

@@ -27,7 +27,14 @@
                             }
                         }, {
                             title: '变量值',
-                            name: 'value'
+                            name: 'value',
+                            format(v,record){
+                                if(record.type=='3'){
+                                    return v.split(',').map(item=>`<img style="width:80px;margin-right:10px;" src="/upload/${item}"/>`).join('');
+                                }else{
+                                    return v;
+                                }
+                            }
                         }, {
                             title: '备注',
                             name: 'desc',
@@ -59,6 +66,7 @@
                         //表格搜索
                         filter: false,
                         //数据条目操作
+                        recordToolsStyle : 'min-width:150px;',
                         recordTools: [{
                             label: '修改',
                             icon: 'edit',
@@ -99,6 +107,9 @@
                             }, {
                                 text: 'HTML',
                                 value: '2'
+                            }, {
+                                text: '图片',
+                                value: '3'
                             }]
                         }, {
                             label: '变量值',
@@ -107,11 +118,7 @@
                             autosize: true,
                             monopolize: true,
                             premise(model) {
-                                return model.type != '2';
-                            },
-                            validate: {
-                                required: true,
-                                maxlength: 1000
+                                return model.type == '1';
                             }
                         }, {
                             label: '变量值',
@@ -120,10 +127,23 @@
                             monopolize: true,
                             premise(model) {
                                 return model.type == '2';
+                            }
+                        }, {
+                            label: '图片',
+                            name: 'pictures',
+                            widget: 'file',
+                            url: '/service/system/file/upload',
+                            monopolize: true,
+                            premise(model) {
+                                return model.type == '3';
                             },
-                            validate: {
-                                required: true,
-                                maxlength: 1000
+                            format: (a) => {
+                                return JSON.parse(a).data;
+                            },
+                            thumbnail: function (v) {
+                                if (v) {
+                                    return `/upload/${v}`;
+                                }
                             }
                         }, {
                             label: '备注',
@@ -139,12 +159,16 @@
                         cast(model) {
                             if (model.type == '2') {
                                 model.html = model.value;
+                            }else if (model.type == '3') {
+                                model.pictures = model.value;
                             }
                             return model;
                         },
                         format: (model) => {
                             if (model.type == '2') {
                                 model.value = model.html;
+                            }else if (model.type == '3') {
+                                model.value = model.pictures;
                             }
                             return model;
                         },

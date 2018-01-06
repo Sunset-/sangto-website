@@ -25,7 +25,7 @@ module.exports = {
             // target: 'http://192.168.0.171:10001',
             target: 'http://localhost:9090/',
             pathRewrite: {
-                '^/upload': '/'
+                // '^/upload': '/'
             },
             secure: false
         }
