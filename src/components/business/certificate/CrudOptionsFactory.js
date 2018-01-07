@@ -16,18 +16,6 @@ module.exports = function (title, moduleName, contentType, categoryName, format)
                     return `<img style="width:100px;" src="/upload/${v}" />`;
                 }
             }, {
-                title: '状态',
-                style: 'width:120px;text-align:center;',
-                name: 'status',
-                format(v) {
-                    var Dictionary = Sunset.Service.Dictionary;
-                    return `<span style="color:${{
-                        '1' : '#09c',
-                        '2' : '#33d685',
-                        '3' : '#F00'
-                    }[v]}">${Dictionary.transcode('CONTENT_STATUS',v)}</span>`
-                }
-            },{
                 title: '更新时间',
                 name: 'createTime',
                 style: 'width:160px;text-align:center;',

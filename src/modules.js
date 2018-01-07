@@ -15,6 +15,7 @@ import Products from './components/business/content/products/index';
 import Case from './components/business/content/case/index';
 import Honor from './components/business/certificate/honor/index.vue';
 import Partner from './components/business/certificate/partner/index.vue';
+import Recruit from './components/business/recruit/index.vue';
 
 let permissions = {
     VIEW: '查看',
@@ -77,36 +78,43 @@ let modules = [
         title: '新闻管理',
         permission: ['ADD', 'MODIFY', 'DELETE'],
         component: News
-    },{
+    }, {
         group: '应用系统',
         color: 'info',
         name: 'Products',
         title: '产品与方案',
         permission: ['ADD', 'MODIFY', 'DELETE'],
         component: Products
-    },{
+    }, {
         group: '应用系统',
         color: 'info',
         name: 'Case',
         title: '经典案例',
         permission: ['ADD', 'MODIFY', 'DELETE'],
         component: Case
-    },{
+    }, {
         group: '应用系统',
         color: 'info',
         name: 'Honor',
         title: '荣誉证书',
         permission: ['ADD', 'MODIFY', 'DELETE'],
         component: Honor
-    },{
+    }, {
         group: '应用系统',
         color: 'info',
         name: 'Partner',
         title: '合作伙伴',
         permission: ['ADD', 'MODIFY', 'DELETE'],
         component: Partner
+    }, {
+        group: '应用系统',
+        color: 'info',
+        name: 'Recruit',
+        title: '招聘信息',
+        permission: ['ADD', 'MODIFY', 'DELETE'],
+        component: Recruit
     }
-    
+
 ];
 
 var moduleComponent = {};
