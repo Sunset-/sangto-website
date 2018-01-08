@@ -28,6 +28,7 @@
                         }, {
                             title: '变量值',
                             name: 'value',
+                            style : 'max-width:500px;overflow:hidden;',
                             format(v,record){
                                 if(record.type=='3'){
                                     return v.split(',').map(item=>`<img style="width:80px;margin-right:10px;" src="/upload/${item}"/>`).join('');
