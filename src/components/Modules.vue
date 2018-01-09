@@ -13,7 +13,7 @@
 </style>
 <template>
     <sunset-container v-ref:container class="peaimage-manage-container">
-        <sunset-sidebar v-ref:sidebar @change="changeSideWidth" slot="leftside" :menus="menus" logo="豌豆管理平台"></sunset-sidebar>
+        <sunset-sidebar v-ref:sidebar @change="changeSideWidth" slot="leftside" :menus="menus" logo="商通企业站管理"></sunset-sidebar>
         <sunset-header :current-user="currentUser" :menus="headerMenus">
         </sunset-header>
         <sunset-major>

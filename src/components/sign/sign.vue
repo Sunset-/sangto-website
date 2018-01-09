@@ -195,7 +195,7 @@
 <template>
 	<div class="sign-container">
 		<div class="page-container sangto-login-container">
-			<h1 class="text-white">豌豆管理平台</h1>
+			<h1 class="text-white">商通企业站管理平台</h1>
 			<form name="form" @submit="login" onsubmit="return false;">
 				<input type="text" class="username" autocomplete="off" v-model="model.account" required placeholder="用户名" ng-change="authError=null"
 				/>
