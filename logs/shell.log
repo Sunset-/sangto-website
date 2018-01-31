@@ -1,22 +1,22 @@
-Last login: Mon Nov 20 09:28:43 2017 from 192.168.0.143
-cd /home/mdp/ui/mdp-manage
-unzip -o build-20171123-1200.zip
-rm -rf build-20171123-1200.zip
+Last login: Wed Jan 10 17:04:58 2018 from 113.139.189.52
+cd /sangto-website/sangto-website-manage
+unzip -o build-20180110-1712.zip
+rm -rf build-20180110-1712.zip
 exit
-[root@171testpro ~]# cd /home/mdp/ui/mdp-manage
-[root@171testpro mdp-manage]# unzip -o build-20171123-1200.zip
-Archive:  build-20171123-1200.zip
+[root@ecs-f933 ~]# cd /sangto-website/sangto-website-manage
+[root@ecs-f933 sangto-website-manage]# unzip -o build-20180110-1712.zip
+Archive:  build-20180110-1712.zip
   inflating: bundle.js               
   inflating: bundle.js.map           
   inflating: index.html              
   inflating: style.css               
+  inflating: assets/RegionJSON.json  
   inflating: ace/ace.js              
   inflating: ace/mode-javascript.js  
   inflating: ace/theme-monokai.js    
   inflating: ace/worker-javascript.js  
-  inflating: assets/RegionJSON.json  
-  inflating: dll/dll.6cc4aef90321795e0a7c.css  
-  inflating: dll/dll.6cc4aef90321795e0a7c.js  
+  inflating: dll/dll.cd3d6f06e42e3e19fcf5.css  
+  inflating: dll/dll.cd3d6f06e42e3e19fcf5.js  
   inflating: images/fontawesome-webfont.eot  
   inflating: images/fontawesome-webfont.svg  
   inflating: images/fontawesome-webfont.ttf  
@@ -26,13 +26,9 @@ Archive:  build-20171123-1200.zip
   inflating: images/ionicons.svg     
   inflating: images/ionicons.ttf     
   inflating: images/ionicons.woff    
-  inflating: scripts/index.b0b397a371388700dce1.js  
+  inflating: scripts/index.a2d4c526812478a41740.js  
   inflating: assets/download/商户上传模板 .xlsx  
   inflating: assets/font/fzyy_gbk.ttf  
-  inflating: assets/tree-icons/attribute.png  
-  inflating: assets/tree-icons/attribute_item.png  
-  inflating: assets/tree-icons/category.png  
-  inflating: assets/tree-icons/home.png  
   inflating: assets/img/360-1.png    
   inflating: assets/img/360-2.png    
   inflating: assets/img/360-3.png    
@@ -84,6 +80,10 @@ Archive:  build-20171123-1200.zip
   inflating: assets/img/tree-icon-org.png  
   inflating: assets/img/user-default.png  
   inflating: assets/img/备案图标.png  
+  inflating: assets/tree-icons/attribute.png  
+  inflating: assets/tree-icons/attribute_item.png  
+  inflating: assets/tree-icons/category.png  
+  inflating: assets/tree-icons/home.png  
   inflating: dll/images/fontawesome-webfont.eot  
   inflating: dll/images/fontawesome-webfont.svg  
   inflating: dll/images/fontawesome-webfont.ttf  
@@ -108,26 +108,21 @@ Archive:  build-20171123-1200.zip
   inflating: assets/img/login/5.jpg  
   inflating: assets/img/mdds/bg.png  
   inflating: assets/img/mdds/logo.png  
+  inflating: vendor/ueditor/dialogs/internal.js  
   inflating: vendor/ueditor/jsp/config.json  
   inflating: vendor/ueditor/jsp/controller.jsp  
-  inflating: vendor/ueditor/dialogs/internal.js  
   inflating: vendor/ueditor/themes/iframe.css  
   inflating: vendor/ueditor/third-party/jquery-1.10.2.js  
   inflating: vendor/ueditor/third-party/jquery-1.10.2.min.js  
   inflating: vendor/ueditor/third-party/jquery-1.10.2.min.map  
   inflating: vendor/ueditor/third-party/xss.min.js  
   inflating: vendor/ueditor/dialogs/anchor/anchor.html  
-  inflating: vendor/ueditor/jsp/lib/commons-codec-1.9.jar  
-  inflating: vendor/ueditor/jsp/lib/commons-fileupload-1.3.1.jar  
-  inflating: vendor/ueditor/jsp/lib/commons-io-2.4.jar  
-  inflating: vendor/ueditor/jsp/lib/json.jar  
-  inflating: vendor/ueditor/jsp/lib/ueditor-1.1.2.jar  
-  inflating: vendor/ueditor/dialogs/attachment/attachment.css  
-  inflating: vendor/ueditor/dialogs/attachment/attachment.html  
-  inflating: vendor/ueditor/dialogs/attachment/attachment.js  
   inflating: vendor/ueditor/dialogs/background/background.css  
   inflating: vendor/ueditor/dialogs/background/background.html  
   inflating: vendor/ueditor/dialogs/background/background.js  
+  inflating: vendor/ueditor/dialogs/attachment/attachment.css  
+  inflating: vendor/ueditor/dialogs/attachment/attachment.html  
+  inflating: vendor/ueditor/dialogs/attachment/attachment.js  
   inflating: vendor/ueditor/dialogs/charts/chart.config.js  
   inflating: vendor/ueditor/dialogs/charts/charts.css  
   inflating: vendor/ueditor/dialogs/charts/charts.html  
@@ -177,6 +172,11 @@ Archive:  build-20171123-1200.zip
   inflating: vendor/ueditor/dialogs/wordimage/tangram.js  
   inflating: vendor/ueditor/dialogs/wordimage/wordimage.html  
   inflating: vendor/ueditor/dialogs/wordimage/wordimage.js  
+  inflating: vendor/ueditor/jsp/lib/commons-codec-1.9.jar  
+  inflating: vendor/ueditor/jsp/lib/commons-fileupload-1.3.1.jar  
+  inflating: vendor/ueditor/jsp/lib/commons-io-2.4.jar  
+  inflating: vendor/ueditor/jsp/lib/json.jar  
+  inflating: vendor/ueditor/jsp/lib/ueditor-1.1.2.jar  
   inflating: vendor/ueditor/lang/en/en.js  
   inflating: vendor/ueditor/lang/zh-cn/zh-cn.js  
   inflating: vendor/ueditor/themes/default/dialogbase.css  
@@ -186,6 +186,7 @@ Archive:  build-20171123-1200.zip
   inflating: vendor/ueditor/third-party/highcharts/highcharts-more.src.js  
   inflating: vendor/ueditor/third-party/highcharts/highcharts.js  
   inflating: vendor/ueditor/third-party/highcharts/highcharts.src.js  
+  inflating: vendor/ueditor/third-party/snapscreen/UEditorSnapscreen.exe  
   inflating: vendor/ueditor/third-party/SyntaxHighlighter/shCore.js  
   inflating: vendor/ueditor/third-party/SyntaxHighlighter/shCoreDefault.css  
   inflating: vendor/ueditor/third-party/video-js/video-js.css  
@@ -193,7 +194,6 @@ Archive:  build-20171123-1200.zip
   inflating: vendor/ueditor/third-party/video-js/video-js.swf  
   inflating: vendor/ueditor/third-party/video-js/video.dev.js  
   inflating: vendor/ueditor/third-party/video-js/video.js  
-  inflating: vendor/ueditor/third-party/snapscreen/UEditorSnapscreen.exe  
   inflating: vendor/ueditor/third-party/webuploader/Uploader.swf  
   inflating: vendor/ueditor/third-party/webuploader/webuploader.css  
   inflating: vendor/ueditor/third-party/webuploader/webuploader.custom.js  
@@ -258,6 +258,20 @@ Archive:  build-20171123-1200.zip
   inflating: vendor/ueditor/dialogs/image/images/progress.png  
   inflating: vendor/ueditor/dialogs/image/images/success.gif  
   inflating: vendor/ueditor/dialogs/image/images/success.png  
+  inflating: vendor/ueditor/dialogs/scrawl/images/addimg.png  
+  inflating: vendor/ueditor/dialogs/scrawl/images/brush.png  
+  inflating: vendor/ueditor/dialogs/scrawl/images/delimg.png  
+  inflating: vendor/ueditor/dialogs/scrawl/images/delimgH.png  
+  inflating: vendor/ueditor/dialogs/scrawl/images/empty.png  
+  inflating: vendor/ueditor/dialogs/scrawl/images/emptyH.png  
+  inflating: vendor/ueditor/dialogs/scrawl/images/eraser.png  
+  inflating: vendor/ueditor/dialogs/scrawl/images/redo.png  
+  inflating: vendor/ueditor/dialogs/scrawl/images/redoH.png  
+  inflating: vendor/ueditor/dialogs/scrawl/images/scale.png  
+  inflating: vendor/ueditor/dialogs/scrawl/images/scaleH.png  
+  inflating: vendor/ueditor/dialogs/scrawl/images/size.png  
+  inflating: vendor/ueditor/dialogs/scrawl/images/undo.png  
+  inflating: vendor/ueditor/dialogs/scrawl/images/undoH.png  
   inflating: vendor/ueditor/dialogs/template/images/bg.gif  
   inflating: vendor/ueditor/dialogs/template/images/pre0.png  
   inflating: vendor/ueditor/dialogs/template/images/pre1.png  
@@ -277,6 +291,10 @@ Archive:  build-20171123-1200.zip
   inflating: vendor/ueditor/dialogs/video/images/right_focus.jpg  
   inflating: vendor/ueditor/dialogs/video/images/success.gif  
   inflating: vendor/ueditor/dialogs/video/images/success.png  
+  inflating: vendor/ueditor/lang/zh-cn/images/copy.png  
+  inflating: vendor/ueditor/lang/zh-cn/images/localimage.png  
+  inflating: vendor/ueditor/lang/zh-cn/images/music.png  
+  inflating: vendor/ueditor/lang/zh-cn/images/upload.png  
   inflating: vendor/ueditor/lang/en/images/addimage.png  
   inflating: vendor/ueditor/lang/en/images/alldeletebtnhoverskin.png  
   inflating: vendor/ueditor/lang/en/images/alldeletebtnupskin.png  
@@ -293,18 +311,6 @@ Archive:  build-20171123-1200.zip
   inflating: vendor/ueditor/lang/en/images/rotaterightdisable.png  
   inflating: vendor/ueditor/lang/en/images/rotaterightenable.png  
   inflating: vendor/ueditor/lang/en/images/upload.png  
-  inflating: vendor/ueditor/themes/default/css/ueditor.css  
-  inflating: vendor/ueditor/themes/default/css/ueditor.min.css  
-  inflating: vendor/ueditor/lang/zh-cn/images/copy.png  
-  inflating: vendor/ueditor/lang/zh-cn/images/localimage.png  
-  inflating: vendor/ueditor/lang/zh-cn/images/music.png  
-  inflating: vendor/ueditor/lang/zh-cn/images/upload.png  
-  inflating: vendor/ueditor/third-party/highcharts/adapters/mootools-adapter.js  
-  inflating: vendor/ueditor/third-party/highcharts/adapters/mootools-adapter.src.js  
-  inflating: vendor/ueditor/third-party/highcharts/adapters/prototype-adapter.js  
-  inflating: vendor/ueditor/third-party/highcharts/adapters/prototype-adapter.src.js  
-  inflating: vendor/ueditor/third-party/highcharts/adapters/standalone-framework.js  
-  inflating: vendor/ueditor/third-party/highcharts/adapters/standalone-framework.src.js  
   inflating: vendor/ueditor/themes/default/images/anchor.gif  
   inflating: vendor/ueditor/themes/default/images/arrow.png  
   inflating: vendor/ueditor/themes/default/images/arrow_down.png  
@@ -339,11 +345,14 @@ Archive:  build-20171123-1200.zip
   inflating: vendor/ueditor/themes/default/images/videologo.gif  
   inflating: vendor/ueditor/themes/default/images/word.gif  
   inflating: vendor/ueditor/themes/default/images/wordpaste.png  
-  inflating: vendor/ueditor/third-party/highcharts/themes/dark-blue.js  
-  inflating: vendor/ueditor/third-party/highcharts/themes/dark-green.js  
-  inflating: vendor/ueditor/third-party/highcharts/themes/gray.js  
-  inflating: vendor/ueditor/third-party/highcharts/themes/grid.js  
-  inflating: vendor/ueditor/third-party/highcharts/themes/skies.js  
+  inflating: vendor/ueditor/themes/default/css/ueditor.css  
+  inflating: vendor/ueditor/themes/default/css/ueditor.min.css  
+  inflating: vendor/ueditor/third-party/highcharts/adapters/mootools-adapter.js  
+  inflating: vendor/ueditor/third-party/highcharts/adapters/mootools-adapter.src.js  
+  inflating: vendor/ueditor/third-party/highcharts/adapters/prototype-adapter.js  
+  inflating: vendor/ueditor/third-party/highcharts/adapters/prototype-adapter.src.js  
+  inflating: vendor/ueditor/third-party/highcharts/adapters/standalone-framework.js  
+  inflating: vendor/ueditor/third-party/highcharts/adapters/standalone-framework.src.js  
   inflating: vendor/ueditor/third-party/highcharts/modules/annotations.js  
   inflating: vendor/ueditor/third-party/highcharts/modules/annotations.src.js  
   inflating: vendor/ueditor/third-party/highcharts/modules/canvas-tools.js  
@@ -362,24 +371,15 @@ Archive:  build-20171123-1200.zip
   inflating: vendor/ueditor/third-party/highcharts/modules/map.src.js  
   inflating: vendor/ueditor/third-party/highcharts/modules/no-data-to-display.js  
   inflating: vendor/ueditor/third-party/highcharts/modules/no-data-to-display.src.js  
+  inflating: vendor/ueditor/third-party/highcharts/themes/dark-blue.js  
+  inflating: vendor/ueditor/third-party/highcharts/themes/dark-green.js  
+  inflating: vendor/ueditor/third-party/highcharts/themes/gray.js  
+  inflating: vendor/ueditor/third-party/highcharts/themes/grid.js  
+  inflating: vendor/ueditor/third-party/highcharts/themes/skies.js  
   inflating: vendor/ueditor/third-party/video-js/font/vjs.eot  
   inflating: vendor/ueditor/third-party/video-js/font/vjs.svg  
   inflating: vendor/ueditor/third-party/video-js/font/vjs.ttf  
   inflating: vendor/ueditor/third-party/video-js/font/vjs.woff  
-  inflating: vendor/ueditor/dialogs/scrawl/images/addimg.png  
-  inflating: vendor/ueditor/dialogs/scrawl/images/brush.png  
-  inflating: vendor/ueditor/dialogs/scrawl/images/delimg.png  
-  inflating: vendor/ueditor/dialogs/scrawl/images/delimgH.png  
-  inflating: vendor/ueditor/dialogs/scrawl/images/empty.png  
-  inflating: vendor/ueditor/dialogs/scrawl/images/emptyH.png  
-  inflating: vendor/ueditor/dialogs/scrawl/images/eraser.png  
-  inflating: vendor/ueditor/dialogs/scrawl/images/redo.png  
-  inflating: vendor/ueditor/dialogs/scrawl/images/redoH.png  
-  inflating: vendor/ueditor/dialogs/scrawl/images/scale.png  
-  inflating: vendor/ueditor/dialogs/scrawl/images/scaleH.png  
-  inflating: vendor/ueditor/dialogs/scrawl/images/size.png  
-  inflating: vendor/ueditor/dialogs/scrawl/images/undo.png  
-  inflating: vendor/ueditor/dialogs/scrawl/images/undoH.png  
-[root@171testpro mdp-manage]# rm -rf build-20171123-1200.zip
-[root@171testpro mdp-manage]# exit
+[root@ecs-f933 sangto-website-manage]# rm -rf build-20180110-1712.zip
+[root@ecs-f933 sangto-website-manage]# exit
 logout
